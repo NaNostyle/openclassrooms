@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/flexbox_styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/markercluster.js"></script>
+    <script src="../js/flexbox_map.js"></script>
+
+
+    <div class="container">
+        <header>
+
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <img src="../images/capture_map.png" style="width:100%">
+                    <div class="text">
+                        <h2>Zoomez sur la carte <span>ci-dessous</span>, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir l'affichage
+                            du marqueur
+                            <img id="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="../images/capture_map.png" style="width:100%">
+                    <div class="text">
+                        <h2>Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir l'affichage
+                            du marqueur
+                            <img id="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="../images/capture_map.png" style="width:100%">
+                    <div class="text">
+                        <h2>Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir l'affichage
+                            du marqueur
+                            <img id="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
+                    </div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)"><i class="fa fa-angle-double-left fa-2x"></i></a>
+                <a class="next" onclick="plusSlides(1)"><i class="fa fa-angle-double-right fa-2x"></i></a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+
+
+            <!-- <div id="diaporama">
+                <div id="boutons">
+                        <button id="bouton-gauche" type="button"><i class="fa fa-angle-double-left fa-2x"></i></button>
+                        <button id="bouton-droit" type="button"></button>
+                </div>
+                <div class="diapo1">
+                    <img src="../images/capture_map.png">
+                    <h2>Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir l'affichage du marqueur <img id="icon" src="../images/bike_map_marker_225-Icon.png">
+                        de la station voulue.</h2>
+                </div>
+            </div> -->
+        </header>
+        <div class="content">
+            <div id="map"></div>
+            <aside>
+            </aside>
+        </div>
+        <div class="footer">FOOTER</div>
+    </div>
+    <script src="../js/slideshow.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiW_RZ93xOfB6h7CI1QEqnjzm27ABREXc&callback=initMap"></script>
+</body>
+
+</html>
