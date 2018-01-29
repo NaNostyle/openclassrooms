@@ -1,4 +1,6 @@
-
+$(".demarrer").on("click", function () {
+  $("#bienvenue").slideUp();
+});
 
 
 
