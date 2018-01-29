@@ -1,7 +1,7 @@
 * {
   padding: 0px;
   margin: 0px;
-  box-sizing:border-box
+  box-sizing: border-box
 }
 
 body {
@@ -32,15 +32,15 @@ body {
 }
 
 #bienvenue a {
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	color: white;
-	text-decoration: none;
-	border-radius: 10px 10px;
-	background-color: #0066B1;
-	width: 20%;
-	height: 22%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px 10px;
+  background-color: #0066B1;
+  width: 20%;
+  height: 22%;
   align-items: center;
   font-weight: bold;
   font-size: 25px;
@@ -71,7 +71,8 @@ body {
   border-radius: 10px 10px;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -86,7 +87,6 @@ body {
   background-color: rgba(255, 255, 255, 0.8)
 }
 
-
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
@@ -96,12 +96,14 @@ body {
   left: 0;
 }
 
-.fa-angle-double-left, .fa-angle-double-right {
+.fa-angle-double-left,
+.fa-angle-double-right {
   color: #E10203;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .text {
@@ -112,7 +114,7 @@ body {
   bottom: 0px;
   width: 100%;
   text-align: center;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 0 0 10px 10px;
 }
 
@@ -125,7 +127,7 @@ body {
 }
 
 .dot {
-  cursor:pointer;
+  cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -135,7 +137,8 @@ body {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #E10203;
 }
 
@@ -147,13 +150,21 @@ body {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 /* #diaporama h2 {
@@ -223,8 +234,6 @@ header {
   position: relative;
 }
 
-
-
 .container {
   display: flex;
   flex-direction: column;
@@ -247,7 +256,7 @@ header {
 }
 
 aside {
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   color: black;
   display: none;
   padding: 20px;
