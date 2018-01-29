@@ -1,4 +1,4 @@
-# openclassrooms
+# OpenClassrooms
 
 ## Projets exercices de la formation Web Développeur Junior d'openclassrooms :
 
