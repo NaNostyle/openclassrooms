@@ -1,5 +1,6 @@
 # openclassrooms
-projets exercices de la formation Web Développeur Junior d'openclassrooms :
+
+## Projets exercices de la formation Web Développeur Junior d'openclassrooms :
 
 Qu’est-ce qu’un développeur web junior ?
 Le développeur web junior est indispensable dans une équipe de développement. Il a pour mission de donner vie aux maquettes visuelles d’une application web réalisées souvent par le graphiste ou l’UX Designer. Il doit traduire, en langage web, ses recommandations graphiques en rédigeant du code HTML, CSS, mais aussi JavaScript et PHP. Il est chargé de :
