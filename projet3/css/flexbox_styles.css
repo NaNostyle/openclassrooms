@@ -10,6 +10,10 @@ body {
 }
 
 #bienvenue {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   background-color: white;
   z-index: 2;
   position: absolute;
@@ -18,8 +22,32 @@ body {
   height: 450px;
 }
 
-#bienvenue img {
+.velovimg {
+  width: 10%;
+  vertical-align: -11px;
+}
+
+.villeimg {
   width: 30%;
+}
+
+#bienvenue a {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	color: white;
+	text-decoration: none;
+	border-radius: 10px 10px;
+	background-color: #0066B1;
+	width: 20%;
+	height: 22%;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#bienvenue a:hover {
+	background-color: #E10203;
 }
 
 .slideshow-container {
