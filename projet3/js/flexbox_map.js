@@ -92,7 +92,7 @@ function initMap() {
                     $("aside").css("display", "initial");
 
                     $("aside h3:first").after("<p>" + infosStation.name + "</p>");
- 
+
                     if (infosStation.status == "OPEN") {
                         $("aside h3:eq(1)").after("<p>Ouverte</p>");
                         $("aside p:eq(1)").css("color", "green").css("font-weight", "bold");
@@ -107,11 +107,16 @@ function initMap() {
 
                     $("aside").append("<canvas><p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p></canvas>");
                     $("aside canvas").attr("id", "canvas");
-                    $("#canvas").css("width", "200px").css("background-color", "red").css("height", "30%");
+                    $("#canvas").css("width", "200px").css("height", "30%").css("background-color", "blue");
                     var canvas = document.querySelector("#canvas");
                     var context = canvas.getContext('2d');
                     context.fillStyle = "gold";
                     context.fillRect(0, 0, 50, 80);
+
+                    ///début tuto canvas
+                    
+                    
+                    ///fin tuto canvas
                 });
 
 
