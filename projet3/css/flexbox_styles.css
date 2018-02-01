@@ -19,7 +19,8 @@ body {
   position: absolute;
   top: 0px;
   border-radius: 10px 10px;
-  height: 450px;
+  height: 100%;
+  width: 100%;
 }
 
 .velovimg {
@@ -52,7 +53,7 @@ body {
 
 .slideshow-container {
   max-width: 1000px;
-  height: 450px;
+  height: 500px;
   position: relative;
   margin: auto;
 }
@@ -60,7 +61,7 @@ body {
 #slideshow {
   position: absolute;
   top: 0px;
-  z-index: 1;
+  height: 100%;
 }
 
 .mySlides {
@@ -247,6 +248,7 @@ header {
   flex-direction: row;
   height: 600px;
   margin: 10px;
+  position: relative;
 }
 
 #map {
