@@ -10,18 +10,11 @@ class Robot {
         console.log("Bonjour, je m'apelle " + this.name + " j'ai " + this.hp + " points de vie. Je me déplace à " + this.maxSpeed + " cases par seconde. Je suis à la case de coordonnées (" + this.xPos + ";" + this.yPos + ").");
     }
     seDeplacer(direction, distance) { 
-    //    déplacer le robot vers la droite si direction est droite
+       this.yPos + distance;
+       this.xPos + distance;
+       déplacer le robot vers la droite si direction est droite
        if (direction == "droite") {
             this.xPos += distance;
-       }
-       if (direction == "gauche") {
-           this.xPos -= distance
-       }
-       if (direction == "haut") {
-           this.yPos += distance
-       }
-       if (direction == "bas") {
-           this.yPos -= distance
        }
     }
 
@@ -37,7 +30,7 @@ function main() {
     // console.log(robot1)
     // console.log(robot2)
     // robots[0].seDeplacer("gauche",3);
-    robots.seDeplacer("haut", 2)
+    robot.seDeplacer("haut", 2)
     robots.forEach(function (robots) {
         robots.sePresenter()
     });

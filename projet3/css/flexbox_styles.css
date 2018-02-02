@@ -62,12 +62,10 @@ body {
   position: absolute;
   top: 0px;
   height: 100%;
+  width: 100%;
 }
-
-.mySlides {
-  display: none;
-}
-
+/* 
+début code diaporama */
 .mySlides img {
   border-radius: 10px 10px;
 }
@@ -138,6 +136,21 @@ body {
   transition: background-color 0.6s ease;
 }
 
+.mySlides {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+/* .mySlides {
+  display: none;
+}
+
+
+
+
+
+
+
 .active,
 .dot:hover {
   background-color: #E10203;
@@ -166,7 +179,7 @@ body {
   to {
     opacity: 1
   }
-}
+} */
 
 /* #diaporama h2 {
   position: absolute;

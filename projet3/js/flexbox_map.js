@@ -63,11 +63,13 @@ function initMap() {
                     this.available_bike_stands = available_bike_stands;
                     this.available_bikes = available_bikes;
                 }
+                
             }
 
             var markers = [];
 
             stations.forEach(function (station) {
+                //méthode créer marker
                 var latitude = station.position.lat;
                 var longitude = station.position.lng;
                 var LatLng = new google.maps.LatLng(latitude, longitude);
@@ -77,12 +79,14 @@ function initMap() {
                     map: map,
                     icon: iconBase + 'bike_map_marker_225-Icon.png',
                     size: new google.maps.Size(41, 54),
+                //fin methode
                 });
                 var infosStation = new Station(station.name, station.address, station.status, station.available_bike_stands, station.available_bikes);
 
                 markers.push(marker);
 
                 marker.addListener('click', function () {
+                    // méthode afficher info marker
                     $("aside").html("")
                     $("aside").append("<h3>Nom de la station : </h3>");
                     $("aside").append("<h3>Statut de la station : </h3>");
