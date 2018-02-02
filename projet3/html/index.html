@@ -27,13 +27,14 @@
 <body>
     <script src="../js/ajax.js"></script>
     <script src="../js/markercluster.js"></script>
-    
+    <script src="../js/flexbox_map.js"></script>
+
 
 
     <div class="container">
         <header>
 
-            <!-- Slideshow container -->
+            
             <div class="slideshow-container">
                 <div id="bienvenue">
                     <img class="villeimg" src="../images/logos-ville-de-lyon-HD.png">
@@ -42,8 +43,8 @@
                     <a href="#demarrer" class="demarrer">Démarrer</a>
 
                 </div>
-                <div id="slideshow">
-                    <!-- Full-width images with number and caption text -->
+                <!-- <div id="slideshow">
+                    
                     <div class="mySlides fade">
                         <img src="../images/capture_map.png" style="width:100%">
                         <div class="text">
@@ -72,24 +73,33 @@
                         </div>
                     </div>
 
-                    <!-- Next and previous buttons -->
+                    <div class="mySlides fade">
+                        <img src="../images/capture_map.png" style="width:100%">
+                        <div class="text">
+                            <h2>Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir l'affichage
+                                du marqueur
+                                <img id="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
+                        </div>
+                    </div>
+
+                    
                     <a class="prev" onclick="plusSlides(-1)">
                         <i class="fa fa-angle-double-left fa-2x"></i>
                     </a>
                     <a class="next" onclick="plusSlides(1)">
                         <i class="fa fa-angle-double-right fa-2x"></i>
                     </a>
-                </div>
+                </div> -->
 
             </div>
             <br>
 
-            <!-- The dots/circles -->
-            <div style="text-align:center">
+            <!-- <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div> -->
 
 
 
@@ -107,12 +117,13 @@
         </header>
         <div class="content">
             <div id="map"></div>
-            <aside><div id="canvasDiv"></div>
+            <aside>
+                <div id="canvasDiv"></div>
             </aside>
         </div>
         <div class="footer">FOOTER</div>
     </div>
-    <script src="../js/flexbox_map.js"></script>
+
     <script src="../js/slideshow.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiW_RZ93xOfB6h7CI1QEqnjzm27ABREXc&callback=initMap"></script>
 </body>
