@@ -16,18 +16,15 @@ class Slideshow {
     this.slides.css("opacity", "0")
   }
   previousSlide() {
-   this.currentSlide = 0;
-   this.previousSlide = this.currentSlide - 1;
+    this.currentSlide = 0;
+    this.previousSlide = this.currentSlide - 1;
   }
   nextSlide() {
     this.currentSlide = 0;
     this.nextSlide = this.currentSlide + 1;
-    $(nextButton).on("click", function () {
-      $("#bienvenue").slideDown();
-    });
   }
   currentSlide() {
-    
+
   }
 
   nextButton() {
@@ -38,14 +35,18 @@ class Slideshow {
 this.slides = document.getElementsByClassName("mySlides");
 this.prevButton = document.getElementsByClassName("prev");
 this.nextButton = document.getElementsByClassName("next");
-i=0
+i = 0
 $(slides).css("opacity", "0");
-  $(".slide1").css("opacity", "100");
+$(".slide1").css("opacity", "100");
 
 $(nextButton).on("click", function () {
   i++
   $(slides).css("opacity", "0");
   $(".slide1").css("opacity", "100");
+  if (i === 0) {
+    $(slides).css("opacity", "0");
+    $(".slide1").css("opacity", "100");
+  }
   if (i === 1) {
     $(slides).css("opacity", "0");
     $(".slide2").css("opacity", "100");
@@ -58,15 +59,17 @@ $(nextButton).on("click", function () {
     $(slides).css("opacity", "0");
     $(".slide4").css("opacity", "100");
   }
-  if (i > 3) {
-  i=0;
-}
+  if (i >= 4) {
+    i = 0;
+  }
 });
 
 $(prevButton).on("click", function () {
   i--
-  $(slides).css("opacity", "0");
-  $(".slide1").css("opacity", "100");
+  if (i === 0) {
+    $(slides).css("opacity", "0");
+    $(".slide1").css("opacity", "100");
+  }
   if (i === 1) {
     $(slides).css("opacity", "0");
     $(".slide2").css("opacity", "100");
@@ -79,9 +82,9 @@ $(prevButton).on("click", function () {
     $(slides).css("opacity", "0");
     $(".slide4").css("opacity", "100");
   }
-  if (i < 0) {
-  x=3;
-}
+  if (i <= 0) {
+    i = 4;
+  }
 });
 
 
