@@ -35,9 +35,10 @@ class Slideshow {
 this.slides = document.getElementsByClassName("mySlides");
 this.prevButton = document.getElementsByClassName("prev");
 this.nextButton = document.getElementsByClassName("next");
-i = 0
 $(slides).css("opacity", "0");
 $(".slide1").css("opacity", "100");
+
+i = 0
 
 $(nextButton).on("click", function () {
   i++
