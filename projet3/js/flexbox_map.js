@@ -87,12 +87,6 @@ function initMap() {
 
                 marker.addListener('click', function () {
                     // méthode afficher info marker
-                    $("aside").html("")
-                    $("aside").append("<h3>Nom de la station : </h3>");
-                    $("aside").append("<h3>Statut de la station : </h3>");
-                    $("aside").append("<h3>Adresse de la station : </h3>");
-                    $("aside").append("<h3>Nombre de vélos disponibles : </h3>");
-                    $("aside").append("<h3>Places de vélos disponibles : </h3>");
                     $("aside").css("display", "initial");
 
                     $("aside h3:first").after("<p>" + infosStation.name + "</p>");
