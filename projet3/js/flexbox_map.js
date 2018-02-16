@@ -63,7 +63,7 @@ function initMap() {
                     this.available_bike_stands = available_bike_stands;
                     this.available_bikes = available_bikes;
                 }
-                
+
             }
 
             var markers = [];
@@ -79,7 +79,7 @@ function initMap() {
                     map: map,
                     icon: iconBase + 'bike_map_marker_225-Icon.png',
                     size: new google.maps.Size(41, 54),
-                //fin methode
+                    //fin methode
                 });
                 var infosStation = new Station(station.name, station.address, station.status, station.available_bike_stands, station.available_bikes);
 
@@ -89,19 +89,20 @@ function initMap() {
                     // méthode afficher info marker
                     $("aside").css("display", "initial");
 
-                    $("aside h3:first").after("<p>" + infosStation.name + "</p>");
+                    $("aside p:first").text(infosStation.name);
 
                     if (infosStation.status == "OPEN") {
-                        $("aside h3:eq(1)").after("<p>Ouverte</p>");
+                        $("aside p:eq(1)").text("Ouverte");
                         $("aside p:eq(1)").css("color", "green").css("font-weight", "bold");
 
                     } else {
-                        $("aside h3:eq(1)").after("<p>Fermée</p>");
+                        $("aside p:eq(1)").text("Fermée");
+                        $("aside p:eq(1)").css("color", "red").css("font-weight", "bold");
                     }
 
-                    $("aside h3:eq(2)").after("<p>" + infosStation.address + "</p>");
-                    $("aside h3:eq(3)").after("<p>" + infosStation.available_bikes + "</p>");
-                    $("aside h3:eq(4)").after("<p>" + infosStation.available_bike_stands + "</p>");
+                    $("aside p:eq(2)").text(infosStation.address);
+                    $("aside p:eq(3)").text(infosStation.available_bikes);
+                    $("aside p:eq(4)").text(infosStation.available_bike_stands);
 
                     $("aside").append("<canvas><p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p></canvas>");
                     $("aside canvas").attr("id", "canvas");
@@ -112,8 +113,8 @@ function initMap() {
                     context.fillRect(0, 0, 50, 80);
 
                     ///début tuto canvas
-                    
-                    
+
+
                     ///fin tuto canvas
                 });
 
