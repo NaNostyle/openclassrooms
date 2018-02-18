@@ -1,41 +1,47 @@
-var sliderImages = document.querySelectorAll(".slide"),
-  arrowLeft = document.querySelector("#arrow-left"),
-  arrowRight = document.querySelector("#arrow-right")
-current = 0;
+class Slideshow {
+  constructor(currentSlide, sliderImages, arrowLeft, arrowRight) {
+    this.currentSlide = currentSlide;
+    this.sliderImages = sliderImages;
+    this.arrowLeft = arrowLeft;
+    this.arrowRight = arrowRight;
+  }
+}
+
+var slideshow = new Slideshow(0, document.querySelectorAll(".slide"), document.querySelector("#arrow-left"), document.querySelector("#arrow-right"));
 
 function reset() {
-  for (i = 0; i < sliderImages.length; i++) {
-    sliderImages[i].style.display = "none";
+  for (i = 0; i < slideshow.sliderImages.length; i++) {
+    slideshow.sliderImages[i].style.display = "none";
   }
 }
 
 function startSlide() {
   reset();
-  sliderImages[0].style.display = "block";
+  slideshow.sliderImages[0].style.display = "block";
 }
 
 function slideLeft() {
   reset();
-  sliderImages[current - 1].style.display = "block";
-  current--;
+  slideshow.sliderImages[slideshow.currentSlide - 1].style.display = "block";
+  slideshow.currentSlide--;
 }
 
 function slideRight() {
   reset();
-  sliderImages[current + 1].style.display = "block";
-  current++;
+  slideshow.sliderImages[slideshow.currentSlide + 1].style.display = "block";
+  slideshow.currentSlide++;
 }
 
-arrowLeft.addEventListener("click", function () {
-  if (current === 0) {
-    current = sliderImages.length;
+slideshow.arrowLeft.addEventListener("click", function () {
+  if (slideshow.currentSlide === 0) {
+    slideshow.currentSlide = slideshow.sliderImages.length;
   }
   slideLeft();
 })
 
-arrowRight.addEventListener("click", function () {
-  if (current === sliderImages.length - 1) {
-    current = -1;
+slideshow.arrowRight.addEventListener("click", function () {
+  if (slideshow.currentSlide === slideshow.sliderImages.length - 1) {
+    slideshow.currentSlide = -1;
   }
   slideRight();
 })
