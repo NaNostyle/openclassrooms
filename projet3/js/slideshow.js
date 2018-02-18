@@ -1,99 +1,147 @@
-class Slideshow {
-  constructor(slides, currentSlide, hideSlide, lastSlide, previousSlide, nextSlide, prevButton, nextButton) {
-    this.slides = slides;
-    this.currentSlide = currentSlide;
-    this.hideSlide = hideSlide;
-    this.lastSlide = lastSlide;
-    this.previousSlide = previousSlide;
-    this.nextSlide = nextSlide;
-    this.prevButton = prevButton;
-    this.nextButton = nextButton;
-  }
-  displaySlide() {
-    this.currentSlide.css("opacity", "100%")
-  }
-  hideSlides() {
-    this.slides.css("opacity", "0")
-  }
-  previousSlide() {
-    this.currentSlide = 0;
-    this.previousSlide = this.currentSlide - 1;
-  }
-  nextSlide() {
-    this.currentSlide = 0;
-    this.nextSlide = this.currentSlide + 1;
-  }
-  currentSlide() {
+var sliderImages = document.querySelectorAll(".slide"),
+  arrowLeft = document.querySelector("#arrow-left"),
+  arrowRight = document.querySelector("#arrow-right")
+current = 0;
 
-  }
-
-  nextButton() {
-
+function reset() {
+  for (i = 0; i < sliderImages.length; i++) {
+    sliderImages[i].style.display = "none";
   }
 }
 
-this.slides = document.getElementsByClassName("mySlides");
-this.prevButton = document.getElementsByClassName("prev");
-this.nextButton = document.getElementsByClassName("next");
-$(slides).css("opacity", "0");
-$(".slide1").css("opacity", "100");
+function startSlide() {
+  reset();
+  sliderImages[0].style.display = "block";
+}
 
-i = 0
+function slideLeft() {
+  reset();
+  sliderImages[current - 1].style.display = "block";
+  current--;
+}
 
-$(nextButton).on("click", function () {
-  i++
-  $(slides).css("opacity", "0");
-  $(".slide1").css("opacity", "100");
-  if (i === 0) {
-    $(slides).css("opacity", "0");
-    $(".slide1").css("opacity", "100");
-  }
-  if (i === 1) {
-    $(slides).css("opacity", "0");
-    $(".slide2").css("opacity", "100");
-  }
-  if (i === 2) {
-    $(slides).css("opacity", "0");
-    $(".slide3").css("opacity", "100");
-  }
-  if (i === 3) {
-    $(slides).css("opacity", "0");
-    $(".slide4").css("opacity", "100");
-  }
-  if (i >= 4) {
-    i = 0;
-  }
-});
+function slideRight() {
+  reset();
+  sliderImages[current + 1].style.display = "block";
+  current++;
+}
 
-$(prevButton).on("click", function () {
-  i--
-  if (i === 0) {
-    $(slides).css("opacity", "0");
-    $(".slide1").css("opacity", "100");
+arrowLeft.addEventListener("click", function () {
+  if (current === 0) {
+    current = sliderImages.length;
   }
-  if (i === 1) {
-    $(slides).css("opacity", "0");
-    $(".slide2").css("opacity", "100");
+  slideLeft();
+})
+
+arrowRight.addEventListener("click", function () {
+  if (current === sliderImages.length - 1) {
+    current = -1;
   }
-  if (i === 2) {
-    $(slides).css("opacity", "0");
-    $(".slide3").css("opacity", "100");
-  }
-  if (i === 3) {
-    $(slides).css("opacity", "0");
-    $(".slide4").css("opacity", "100");
-  }
-  if (i <= 0) {
-    i = 4;
-  }
-});
+  slideRight();
+})
+
+startSlide();
 
 
 
 
-$(".demarrer").on("click", function () {
-  $("#bienvenue").slideUp();
-});
+
+// class Slideshow {
+//   constructor(slides, currentSlide, hideSlide, lastSlide, previousSlide, nextSlide, prevButton, nextButton) {
+//     this.slides = slides;
+//     this.currentSlide = currentSlide;
+//     this.hideSlide = hideSlide;
+//     this.lastSlide = lastSlide;
+//     this.previousSlide = previousSlide;
+//     this.nextSlide = nextSlide;
+//     this.prevButton = prevButton;
+//     this.nextButton = nextButton;
+//   }
+//   displaySlide() {
+//     this.currentSlide.css("opacity", "100%")
+//   }
+//   hideSlides() {
+//     this.slides.css("opacity", "0")
+//   }
+//   previousSlide() {
+//     this.currentSlide = 0;
+//     this.previousSlide = this.currentSlide - 1;
+//   }
+//   nextSlide() {
+//     this.currentSlide = 0;
+//     this.nextSlide = this.currentSlide + 1;
+//   }
+//   currentSlide() {
+
+//   }
+
+//   nextButton() {
+
+//   }
+// }
+
+// this.slides = document.getElementsByClassName("mySlides");
+// this.prevButton = document.getElementsByClassName("prev");
+// this.nextButton = document.getElementsByClassName("next");
+// $(slides).css("opacity", "0");
+// $(".slide1").css("opacity", "100");
+
+// i = 0
+
+// $(nextButton).on("click", function () {
+//   i++
+//   $(slides).css("opacity", "0");
+//   $(".slide1").css("opacity", "100");
+//   if (i === 0) {
+//     $(slides).css("opacity", "0");
+//     $(".slide1").css("opacity", "100");
+//   }
+//   if (i === 1) {
+//     $(slides).css("opacity", "0");
+//     $(".slide2").css("opacity", "100");
+//   }
+//   if (i === 2) {
+//     $(slides).css("opacity", "0");
+//     $(".slide3").css("opacity", "100");
+//   }
+//   if (i === 3) {
+//     $(slides).css("opacity", "0");
+//     $(".slide4").css("opacity", "100");
+//   }
+//   if (i >= 4) {
+//     i = 0;
+//   }
+// });
+
+// $(prevButton).on("click", function () {
+//   i--
+//   if (i === 0) {
+//     $(slides).css("opacity", "0");
+//     $(".slide1").css("opacity", "100");
+//   }
+//   if (i === 1) {
+//     $(slides).css("opacity", "0");
+//     $(".slide2").css("opacity", "100");
+//   }
+//   if (i === 2) {
+//     $(slides).css("opacity", "0");
+//     $(".slide3").css("opacity", "100");
+//   }
+//   if (i === 3) {
+//     $(slides).css("opacity", "0");
+//     $(".slide4").css("opacity", "100");
+//   }
+//   if (i <= 0) {
+//     i = 4;
+//   }
+// });
+
+
+
+
+// $(".demarrer").on("click", function () {
+//   $("#bienvenue").slideUp();
+// });
 
 
 
