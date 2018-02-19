@@ -4,18 +4,12 @@
 }
 
 .wrap {
-    max-width: 1000px;
+    width: 1000px;
     height: 66vh;
     position: relative;
-    margin: auto;    
+    margin: auto; 
 }
 
-.slide {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 66vh;
-}
 
 .slide1 {
     background-image: url("../images/image1.jpeg");
@@ -34,6 +28,7 @@
 }
 
 .slide-content {
+    width: 100%;
     height: 66vh;
     display: flex;
     flex-direction: column;
@@ -70,3 +65,13 @@
     right: 0;
     margin-right: 30px;
 }
+
+/* Début ajout styles */
+
+#welcome, slider, slide {
+    position: absolute;
+}
+
+
+
+

@@ -1,3 +1,7 @@
+$(".demarrer").on("click", function () {
+  $("#bienvenue").slideUp();
+});
+
 class Slideshow {
   constructor(currentSlide, sliderImages, arrowLeft, arrowRight) {
     this.currentSlide = currentSlide;
@@ -46,17 +50,41 @@ class Slideshow {
       slideshow.slideRight();
     })
   }
+
+  keyboardNav() {
+    document.onkeydown = function(e) {
+      if (e.keyCode == '37') {
+        if (slideshow.currentSlide === 0) {
+          slideshow.currentSlide = slideshow.sliderImages.length;
+        }
+        slideshow.slideLeft();
+      } else if (e.keyCode == '39') {
+        if (slideshow.currentSlide === slideshow.sliderImages.length - 1) {
+          slideshow.currentSlide = -1;
+        }
+        slideshow.slideRight();
+      }
+    }
+  }
 }
 
 var slideshow = new Slideshow(0, document.querySelectorAll(".slide"), document.querySelector("#arrow-left"), document.querySelector("#arrow-right"));
 
 i = 0;
 
+slideshow.keyboardNav();
+
 slideshow.startSlide();
 
 slideshow.previous();
 
 slideshow.next();
+
+for (i = 0; i < dots.length; i++) {
+  dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].className += " active";
 
 
 
@@ -157,9 +185,7 @@ slideshow.next();
 
 
 
-// $(".demarrer").on("click", function () {
-//   $("#bienvenue").slideUp();
-// });
+
 
 
 
@@ -191,9 +217,3 @@ slideshow.next();
 //   for (i = 0; i < slides.length; i++) {
 //     slides[i].style.display = "none";
 //   }
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex - 1].style.display = "block";
-//   dots[slideIndex - 1].className += " active";
-// }
