@@ -12,24 +12,24 @@ class Slideshow {
 
   reset() {
     for (i = 0; i < this.sliderImages.length; i++) {
-      this.sliderImages[i].style.display = "none";
+      this.sliderImages[i].style.opacity = "0";
     }
   }
 
   startSlide() {
     this.reset();
-    this.sliderImages[0].style.display = "block";
+    this.sliderImages[0].style.opacity = "1";
   }
 
   slideLeft() {
     this.reset();
-    this.sliderImages[this.currentSlide - 1].style.display = "block";
+    this.sliderImages[this.currentSlide - 1].style.opacity = "1";
     this.currentSlide--;
   }
 
   slideRight() {
     this.reset();
-    this.sliderImages[this.currentSlide + 1].style.display = "block";
+    this.sliderImages[this.currentSlide + 1].style.opacity = "1";
     this.currentSlide++;
   }
 
@@ -80,11 +80,11 @@ slideshow.previous();
 
 slideshow.next();
 
-for (i = 0; i < dots.length; i++) {
-  dots[i].className = dots[i].className.replace(" active", "");
-}
-slides[slideIndex - 1].style.display = "block";
-dots[slideIndex - 1].className += " active";
+// for (i = 0; i < dots.length; i++) {
+//   dots[i].className = dots[i].className.replace(" active", "");
+// }
+// slides[slideIndex - 1].style.opacity = "1";
+// dots[slideIndex - 1].className += " active";
 
 
 
@@ -103,7 +103,7 @@ dots[slideIndex - 1].className += " active";
 //     this.prevButton = prevButton;
 //     this.nextButton = nextButton;
 //   }
-//   displaySlide() {
+//   opacitySlide() {
 //     this.currentSlide.css("opacity", "100%")
 //   }
 //   hideSlides() {
@@ -189,31 +189,3 @@ dots[slideIndex - 1].className += " active";
 
 
 
-
-
-// var slideIndex = 1;
-// showSlides(slideIndex);
-
-// // Next/previous controls
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// // Thumbnail image controls
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
-// function showSlides(n) {
-//   var i;
-//   var slides = document.getElementsByClassName("mySlides");
-//   var dots = document.getElementsByClassName("dot");
-//   if (n > slides.length) {
-//     slideIndex = 1
-//   }
-//   if (n < 1) {
-//     slideIndex = slides.length
-//   }
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }

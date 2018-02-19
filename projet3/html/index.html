@@ -31,6 +31,7 @@
 
 
 
+
     <div class="container">
         <header>
 
@@ -45,8 +46,8 @@
                 </div>
                 <div id="slideshow">
 
-                    <div class="slide slide1">
-                            <img src="../images/capture_map.png" style="width:100%">
+                    <div class="slide fade">
+                        <img src="../images/capture_map.png">
                         <div class="text">
                             <h2>1 Zoomez sur la carte
                                 <span>ci-dessous</span>, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir l'affichage
@@ -55,8 +56,8 @@
                         </div>
                     </div>
 
-                    <div class="slide slide2">
-                        <img src="../images/capture_map.png" style="width:100%">
+                    <div class="slide fade">
+                        <img src="http://via.placeholder.com/1000x550/0000FF?text=INSTRUCTION+2">
                         <div class="text">
                             <h2>2 Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir
                                 l'affichage du marqueur
@@ -64,8 +65,8 @@
                         </div>
                     </div>
 
-                    <div class="slide slide3">
-                        <img src="../images/capture_map.png" style="width:100%">
+                    <div class="slide fade">
+                        <img src="http://via.placeholder.com/1000x550/ffffff?text=INSTRUCTION+3">
                         <div class="text">
                             <h2>3 Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir
                                 l'affichage du marqueur
@@ -73,8 +74,8 @@
                         </div>
                     </div>
 
-                    <div class="slide slide4">
-                        <img src="../images/capture_map.png" style="width:100%">
+                    <div class="slide fade">
+                        <img src="http://via.placeholder.com/1000x550/E8117F?text=INSTRUCTION+4">
                         <div class="text">
                             <h2>4 Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir
                                 l'affichage du marqueur
@@ -101,24 +102,11 @@
                 <span class="dot" onclick="currentSlide(4)"></span>
             </div>
 
-
-
-            <!-- <div id="diaporama">
-                <div id="boutons">
-                        <button id="bouton-gauche" type="button"><i class="fa fa-angle-double-left fa-2x"></i></button>
-                        <button id="bouton-droit" type="button"></button>
-                </div>
-                <div class="diapo1">
-                    <img src="../images/capture_map.png">
-                    <h2>Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir l'affichage du marqueur <img id="icon" src="../images/bike_map_marker_225-Icon.png">
-                        de la station voulue.</h2>
-                </div>
-            </div> -->
         </header>
         <div class="content">
             <div id="map"></div>
             <aside>
-            
+
                 <div class="infos-station">
                     <h3>Nom de la station : </h3>
                     <p></p>
@@ -131,12 +119,14 @@
                     <h3>Places de vélos disponibles : </h3>
                     <p></p>
                 </div>
-                <div id="canvasDiv"></div>
+                <canvas id="canvas" width="300px" height="300px">
+                    Sorry your browser sucks
+                </canvas>
             </aside>
         </div>
         <div class="footer">FOOTER</div>
     </div>
-
+    <script src="../js/canvas.js"></script>
     <script src="../js/slideshow.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiW_RZ93xOfB6h7CI1QEqnjzm27ABREXc&callback=initMap"></script>
 </body>

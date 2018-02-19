@@ -104,13 +104,13 @@ function initMap() {
                     $("aside p:eq(3)").text(infosStation.available_bikes);
                     $("aside p:eq(4)").text(infosStation.available_bike_stands);
 
-                    $("aside").append("<canvas><p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p></canvas>");
-                    $("aside canvas").attr("id", "canvas");
-                    $("#canvas").css("width", "200px").css("height", "30%").css("background-color", "blue");
-                    var canvas = document.querySelector("#canvas");
-                    var context = canvas.getContext('2d');
-                    context.fillStyle = "gold";
-                    context.fillRect(0, 0, 50, 80);
+                    // $("aside").append("<canvas><p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p></canvas>");
+                    // $("aside canvas").attr("id", "canvas");
+                    // $("#canvas").css("width", "200px").css("height", "30%").css("background-color", "blue");
+                    // var canvas = document.querySelector("#canvas");
+                    // var context = canvas.getContext('2d');
+                    // context.fillStyle = "gold";
+                    // context.fillRect(0, 0, 50, 80);
 
                     ///début tuto canvas
 
