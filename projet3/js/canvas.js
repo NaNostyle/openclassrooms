@@ -34,7 +34,6 @@ class Canvas {
     myCanvas.id.addEventListener("mouseup", myCanvas.disengage);
   }
 }
-
 var myCanvas = new Canvas(document.getElementById("canvas"), 4, false, document.getElementById("canvas").getContext("2d"));
 
 context = myCanvas.context;

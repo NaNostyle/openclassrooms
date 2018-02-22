@@ -20,7 +20,6 @@ body {
   top: 0px;
   border-radius: 10px 10px;
   height: 100%;
-  width: 100%;
 }
 
 .velovimg {
@@ -32,7 +31,7 @@ body {
   width: 30%;
 }
 
-#bienvenue a {
+.btn {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -47,29 +46,34 @@ body {
   font-size: 25px;
 }
 
-#bienvenue a:hover {
-  background-color: #E10203;
+.demarrer {
+  transition: background-color 0.6s ease;
 }
 
-.slideshow-container {
-  max-width: 1000px;
-  height: 500px;
-  position: relative;
-  margin: auto;
+.btn-reserver {
+  margin-top: 20px;
+  width: 150px;
+  border: none;
+  height: 60px;
 }
+
+.btn:hover {
+  background-color: #E10203;
+  cursor: pointer;
+}
+
 
 #slideshow {
-  position: absolute;
-  top: 0px;
-  height: 100%;
-  width: 100%;
+  position: relative;
+  height: 65vh;
+  max-width: 1000px;
+  background-color: blue;
 }
 /* 
 début code diaporama */
 .slide > img {
   border-radius: 10px 10px;
-  width: 100%;
-  height: 100%;
+  width: 65vw;
 }
 
 #arrow-left,
@@ -77,7 +81,6 @@ début code diaporama */
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
   transform: translateY(-50%);
   padding: 16px;
   color: white;
@@ -114,9 +117,18 @@ début code diaporama */
   position: absolute;
   bottom: 0px;
   width: 100%;
+  height: 22%;
   text-align: center;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 0 0 10px 10px;
+}
+
+.text h2 {
+  font-size: 1.5vw;
+}
+
+.icon {
+  width: 3vw;
 }
 
 .text span {
@@ -140,11 +152,36 @@ début code diaporama */
 
 .slide {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  width: 65vw;
+  height: 65vh;
   animation-name: fade;
+  background-color: red;
+  background-image: url("../images/capture_map.png");
+  background-size: contain;
+  border-radius: 10px 10px;
 }
 
+aside p {
+  margin-bottom: 8px;
+}
+
+.infos-station {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-reserver {
+  color: white;
+  border-radius: 10px 10px;
+  background-color: #0066B1;
+  width: 150px;
+  height: 40px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px;
+}
 .active,
 .dot:hover {
   background-color: #E10203;
@@ -176,28 +213,30 @@ début code diaporama */
 }
 
 #canvas {
-  border: solid 4px;
+  border: solid 4px #E10203;
 }
 
 header {
-  width: 100%;
+  background-color: blue;
   margin: auto;
   align-items: center;
   position: relative;
+  height: 600px;
+  margin-top: 40px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 85%;
+  width: 65vw;
   margin: auto;
 }
 
 .content {
   display: flex;
   flex-direction: row;
-  height: 600px;
+  height: 620px;
   margin: 10px;
   position: relative;
 }
@@ -214,6 +253,7 @@ aside {
   display: none;
   padding: 20px;
   width: 500px;
+  height: 100%;
   border-radius: 10px 10px;
 }
 

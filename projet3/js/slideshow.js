@@ -52,7 +52,7 @@ class Slideshow {
   }
 
   keyboardNav() {
-    document.onkeydown = function(e) {
+    document.onkeydown = function (e) {
       if (e.keyCode == '37') {
         if (slideshow.currentSlide === 0) {
           slideshow.currentSlide = slideshow.sliderImages.length;
@@ -80,11 +80,7 @@ slideshow.previous();
 
 slideshow.next();
 
-// for (i = 0; i < dots.length; i++) {
-//   dots[i].className = dots[i].className.replace(" active", "");
-// }
-// slides[slideIndex - 1].style.opacity = "1";
-// dots[slideIndex - 1].className += " active";
+
 
 
 
@@ -181,11 +177,3 @@ slideshow.next();
 //     i = 4;
 //   }
 // });
-
-
-
-
-
-
-
-

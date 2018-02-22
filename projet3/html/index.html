@@ -8,9 +8,6 @@
     <meta name="Description" content="Application de réservation en ligne de vélos pour la ville de Lyon. Elle est alimentée par l'API de JCDecaux.">
     <meta name="Keywords" content="Velo'v apllication reservation">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <html lang="fr">
-
-    </html>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -31,78 +28,71 @@
 
 
 
-
     <div class="container">
-        <header>
 
 
             <div class="slideshow-container">
-                <div id="bienvenue">
-                    <img class="villeimg" src="../images/logos-ville-de-lyon-HD.png">
-                    <h1>Bienvenue sur l'application de location
-                        <img class="velovimg" src="../images/velov.gif"> de la ville de Lyon.</h1>
-                    <a href="#demarrer" class="demarrer">Démarrer</a>
-
-                </div>
                 <div id="slideshow">
+                    <div id="bienvenue">
+                        <img class="villeimg" src="../images/logos-ville-de-lyon-HD.png">
+                        <h1>Bienvenue sur l'application de location
+                            <img class="velovimg" src="../images/velov.gif"> de la ville de Lyon.</h1>
+                        <a href="#demarrer" class="demarrer btn">Démarrer</a>
+
+                    </div>
+
 
                     <div class="slide fade">
-                        <img src="../images/capture_map.png">
+                        <!-- <img src="../images/capture_map.png"> -->
                         <div class="text">
                             <h2>1 Zoomez sur la carte
                                 <span>ci-dessous</span>, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir l'affichage
                                 du marqueur
-                                <img id="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
+                                <img class="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
                         </div>
                     </div>
 
                     <div class="slide fade">
-                        <img src="http://via.placeholder.com/1000x550/0000FF?text=INSTRUCTION+2">
+                        <!-- <img src="http://via.placeholder.com/1000x550/0000FF?text=INSTRUCTION+2"> -->
+                        <!-- <img src="../images/screenshot.png"> -->
                         <div class="text">
-                            <h2>2 Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir
-                                l'affichage du marqueur
-                                <img id="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
+                            <h2>2 Cliquez sur le marqueur
+                                <img class="icon" src="../images/bike_map_marker_225-Icon.png">puis apposez votre signature dans le cadre rouge prévu à cet effet.</h2>
                         </div>
                     </div>
 
                     <div class="slide fade">
-                        <img src="http://via.placeholder.com/1000x550/ffffff?text=INSTRUCTION+3">
+                        <!-- <img src="http://via.placeholder.com/1456x644/ffffff?text=INSTRUCTION+3"> -->
                         <div class="text">
                             <h2>3 Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir
                                 l'affichage du marqueur
-                                <img id="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
+                                <img class="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
                         </div>
                     </div>
 
                     <div class="slide fade">
-                        <img src="http://via.placeholder.com/1000x550/E8117F?text=INSTRUCTION+4">
+                        <!-- <img src="http://via.placeholder.com/1456x644/E8117F?text=INSTRUCTION+4"> -->
                         <div class="text">
                             <h2>4 Zoomez sur la carte ci-dessous, à l'aide de "CTRL + Molette de défilement" jusqu'à obtenir
                                 l'affichage du marqueur
-                                <img id="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
+                                <img class="icon" src="../images/bike_map_marker_225-Icon.png"> de la station voulue.</h2>
                         </div>
                     </div>
 
-
-                    <a id="arrow-left">
-                        <i class="fa fa-angle-double-left fa-2x"></i>
-                    </a>
-                    <a id="arrow-right">
-                        <i class="fa fa-angle-double-right fa-2x"></i>
-                    </a>
+                    <div class="arrows">
+                            <a id="arrow-left">
+                                <i class="fa fa-angle-double-left fa-2x"></i>
+                            </a>
+                            <a id="arrow-right">
+                                <i class="fa fa-angle-double-right fa-2x"></i>
+                            </a>
+                        </div>
                 </div>
 
             </div>
-            <br>
 
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-            </div>
+            
 
-        </header>
         <div class="content">
             <div id="map"></div>
             <aside>
@@ -118,10 +108,12 @@
                     <p></p>
                     <h3>Places de vélos disponibles : </h3>
                     <p></p>
+
+                    <canvas id="canvas" width="250px" height="250px">
+                        Sorry your browser sucks
+                    </canvas>
+                    <button type="submit" class="btn btn-reserver">Réserver</button>
                 </div>
-                <canvas id="canvas" width="300px" height="300px">
-                    Sorry your browser sucks
-                </canvas>
             </aside>
         </div>
         <div class="footer">FOOTER</div>
