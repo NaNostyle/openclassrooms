@@ -156,7 +156,6 @@ début code diaporama */
   height: 65vh;
   animation-name: fade;
   background-color: red;
-  background-image: url("../images/capture_map.png");
   background-size: contain;
   border-radius: 10px 10px;
 }

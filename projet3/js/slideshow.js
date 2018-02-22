@@ -1,3 +1,4 @@
+// a utiliser a utiliser dans le main
 $(".demarrer").on("click", function () {
   $("#bienvenue").slideUp();
 });
@@ -8,10 +9,15 @@ class Slideshow {
     this.sliderImages = sliderImages;
     this.arrowLeft = arrowLeft;
     this.arrowRight = arrowRight;
+
+    this.listenKeyboardEvents();
+    this.startSlide();
+    this.previous();
+    this.next();
   }
 
   reset() {
-    for (i = 0; i < this.sliderImages.length; i++) {
+    for (var i = 0; i < this.sliderImages.length; i++) {
       this.sliderImages[i].style.opacity = "0";
     }
   }
@@ -34,51 +40,43 @@ class Slideshow {
   }
 
   previous() {
-    this.arrowLeft.addEventListener("click", function () {
-      if (slideshow.currentSlide === 0) {
-        slideshow.currentSlide = slideshow.sliderImages.length;
+    this.arrowLeft.addEventListener("click", () => {
+      if (this.currentSlide === 0) {
+        this.currentSlide = this.sliderImages.length;
       }
-      slideshow.slideLeft();
+      this.slideLeft();
     })
   }
 
   next() {
-    this.arrowRight.addEventListener("click", function () {
-      if (slideshow.currentSlide === slideshow.sliderImages.length - 1) {
-        slideshow.currentSlide = -1;
+    this.arrowRight.addEventListener("click", () => {
+      if (this.currentSlide === this.sliderImages.length - 1) {
+        this.currentSlide = -1;
       }
-      slideshow.slideRight();
+      this.slideRight();
     })
   }
 
-  keyboardNav() {
-    document.onkeydown = function (e) {
+  listenKeyboardEvents() {
+    document.addEventListener("keydown", (e) => {
       if (e.keyCode == '37') {
-        if (slideshow.currentSlide === 0) {
-          slideshow.currentSlide = slideshow.sliderImages.length;
+        if (this.currentSlide === 0) {
+          this.currentSlide = this.sliderImages.length;
         }
-        slideshow.slideLeft();
+        this.slideLeft();
       } else if (e.keyCode == '39') {
-        if (slideshow.currentSlide === slideshow.sliderImages.length - 1) {
-          slideshow.currentSlide = -1;
+        if (this.currentSlide === this.sliderImages.length - 1) {
+          this.currentSlide = -1;
         }
-        slideshow.slideRight();
+        this.slideRight();
       }
-    }
+    })
   }
 }
 
-var slideshow = new Slideshow(0, document.querySelectorAll(".slide"), document.querySelector("#arrow-left"), document.querySelector("#arrow-right"));
 
-i = 0;
 
-slideshow.keyboardNav();
 
-slideshow.startSlide();
-
-slideshow.previous();
-
-slideshow.next();
 
 
 
