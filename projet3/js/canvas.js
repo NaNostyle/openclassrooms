@@ -57,7 +57,6 @@ myCanvas.canvasFilled();
 myCanvas.mousedown();
 myCanvas.mousemove();
 myCanvas.mouseup();
-btn = document.getElementByClassName("btn-clear");
 // button.addEventListener("click", function(){
 //   context.clearRect(0, 0, canvas.width, canvas.height);
 // })

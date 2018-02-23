@@ -44,17 +44,14 @@ body {
   align-items: center;
   font-weight: bold;
   font-size: 25px;
-}
-
-.demarrer {
-  transition: background-color 0.6s ease;
-}
-
-.btn-reserver {
   margin-top: 20px;
   width: 150px;
   border: none;
   height: 60px;
+}
+
+.demarrer {
+  transition: background-color 0.6s ease;
 }
 
 .btn:hover {
@@ -63,11 +60,12 @@ body {
 }
 
 
-#slideshow {
+.slideshow-container {
   position: relative;
   height: 65vh;
-  max-width: 1000px;
+  width: 1000px;
   background-color: blue;
+  margin: auto;
 }
 /* 
 début code diaporama */
@@ -152,8 +150,6 @@ début code diaporama */
 
 .slide {
   position: absolute;
-  width: 65vw;
-  height: 65vh;
   animation-name: fade;
   background-color: red;
   background-size: contain;
@@ -171,7 +167,7 @@ aside p {
   align-items: center;
 }
 
-.btn-reserver {
+.btn-reserver, .btn-clear {
   color: white;
   border-radius: 10px 10px;
   background-color: #0066B1;
@@ -215,20 +211,11 @@ aside p {
   border: solid 4px #E10203;
 }
 
-header {
-  background-color: blue;
-  margin: auto;
-  align-items: center;
-  position: relative;
-  height: 600px;
-  margin-top: 40px;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 65vw;
+  width: 85%;
   margin: auto;
 }
 
@@ -243,7 +230,6 @@ header {
 #map {
   width: 100%;
   border-radius: 10px 10px;
-  margin-right: 10px;
 }
 
 aside {
@@ -254,11 +240,21 @@ aside {
   width: 500px;
   height: 100%;
   border-radius: 10px 10px;
+  margin-left: 10px;
 }
 
 .footer {
   height: 400px;
   background-color: coral;
   border-radius: 10px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.canvasButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
