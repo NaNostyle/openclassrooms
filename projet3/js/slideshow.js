@@ -28,12 +28,18 @@ class Slideshow {
   }
 
   slideLeft() {
+    if (this.currentSlide === 0) {
+      this.currentSlide = this.sliderImages.length;
+    }
     this.reset();
     this.sliderImages[this.currentSlide - 1].style.opacity = "1";
     this.currentSlide--;
   }
 
   slideRight() {
+    if (this.currentSlide === this.sliderImages.length - 1) {
+      this.currentSlide = -1;
+    }
     this.reset();
     this.sliderImages[this.currentSlide + 1].style.opacity = "1";
     this.currentSlide++;
@@ -41,18 +47,12 @@ class Slideshow {
 
   previous() {
     this.arrowLeft.addEventListener("click", () => {
-      if (this.currentSlide === 0) {
-        this.currentSlide = this.sliderImages.length;
-      }
       this.slideLeft();
     });
   }
 
   next() {
     this.arrowRight.addEventListener("click", () => {
-      if (this.currentSlide === this.sliderImages.length - 1) {
-        this.currentSlide = -1;
-      }
       this.slideRight();
     });
   }
@@ -60,19 +60,86 @@ class Slideshow {
   listenKeyboardEvents() {
     document.addEventListener("keydown", (e) => {
       if (e.keyCode == '37') {
-        if (this.currentSlide === 0) {
-          this.currentSlide = this.sliderImages.length;
-        }
         this.slideLeft();
-      } else if (e.keyCode == '39') {
-        if (this.currentSlide === this.sliderImages.length - 1) {
-          this.currentSlide = -1;
-        }
+      } else if (e.keyCode == '39') { 
         this.slideRight();
       }
     });
   }
 }
+
+
+
+// class Slideshow {
+//   constructor(currentSlide, sliderImages, arrowLeft, arrowRight) {
+//     this.currentSlide = currentSlide;
+//     this.sliderImages = sliderImages;
+//     this.arrowLeft = arrowLeft;
+//     this.arrowRight = arrowRight;
+
+//     this.listenKeyboardEvents();
+//     this.startSlide();
+//     this.previous();
+//     this.next();
+//   }
+
+//   reset() {
+//     for (var i = 0; i < this.sliderImages.length; i++) {
+//       this.sliderImages[i].style.opacity = "0";
+//     }
+//   }
+
+//   startSlide() {
+//     this.reset();
+//     this.sliderImages[0].style.opacity = "1";
+//   }
+
+//   slideLeft() {
+//     this.reset();
+//     this.sliderImages[this.currentSlide - 1].style.opacity = "1";
+//     this.currentSlide--;
+//   }
+
+//   slideRight() {
+//     this.reset();
+//     this.sliderImages[this.currentSlide + 1].style.opacity = "1";
+//     this.currentSlide++;
+//   }
+
+//   previous() {
+//     this.arrowLeft.addEventListener("click", () => {
+//       if (this.currentSlide === 0) {
+//         this.currentSlide = this.sliderImages.length;
+//       }
+//       this.slideLeft();
+//     });
+//   }
+
+//   next() {
+//     this.arrowRight.addEventListener("click", () => {
+//       if (this.currentSlide === this.sliderImages.length - 1) {
+//         this.currentSlide = -1;
+//       }
+//       this.slideRight();
+//     });
+//   }
+
+//   listenKeyboardEvents() {
+//     document.addEventListener("keydown", (e) => {
+//       if (e.keyCode == '37') {
+//         if (this.currentSlide === 0) {
+//           this.currentSlide = this.sliderImages.length;
+//         }
+//         this.slideLeft();
+//       } else if (e.keyCode == '39') {
+//         if (this.currentSlide === this.sliderImages.length - 1) {
+//           this.currentSlide = -1;
+//         }
+//         this.slideRight();
+//       }
+//     });
+//   }
+// }
 
 
 
