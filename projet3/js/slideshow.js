@@ -45,7 +45,7 @@ class Slideshow {
         this.currentSlide = this.sliderImages.length;
       }
       this.slideLeft();
-    })
+    });
   }
 
   next() {
@@ -54,7 +54,7 @@ class Slideshow {
         this.currentSlide = -1;
       }
       this.slideRight();
-    })
+    });
   }
 
   listenKeyboardEvents() {
@@ -70,7 +70,7 @@ class Slideshow {
         }
         this.slideRight();
       }
-    })
+    });
   }
 }
 
