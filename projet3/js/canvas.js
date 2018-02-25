@@ -1,5 +1,5 @@
 class Canvas {
-  constructor(id, radius, dragging, context, canvasY, canvasX, filled) {
+  constructor(id, radius, dragging, context, canvasY, canvasX, filled, clear) {
     this.id = id;
     this.radius = radius;
     this.dragging = dragging;
@@ -7,6 +7,7 @@ class Canvas {
     this.canvasY = canvasY;
     this.canvasX = canvasX;
     this.filled = filled;
+    this.clear = clear;
   }
   engage(e) {
     this.dragging = true;
@@ -25,7 +26,6 @@ class Canvas {
       context.fill();
       context.beginPath();
       context.moveTo(e.clientX - this.canvasX, e.clientY - this.canvasY);
-      console.log(context);
     }
   }
   disengage(e) {
@@ -46,43 +46,28 @@ class Canvas {
       $("#canvas").css("border-color", "blue");
     }
   }
+  clearCanvas() {
+    this.clear.addEventListener("click", function(){
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    });
+  }
+  
 }
 
-var myCanvas = new Canvas(document.getElementById("canvas"), 4, false, document.getElementById("canvas").getContext("2d"), canvas.getBoundingClientRect().y, canvas.getBoundingClientRect().x, false);
+var myCanvas = new Canvas(document.getElementById("canvas"), 4, false, document.getElementById("canvas").getContext("2d"), canvas.getBoundingClientRect().y, canvas.getBoundingClientRect().x, false, document.getElementById("clear"));
 
 context = myCanvas.context;
 
 context.lineWidth = myCanvas.radius * 2;
+
+this.clear.addEventListener("click", function(){
+  context.clearRect(0, 0, canvas.width, canvas.height);
+});
+
 myCanvas.canvasFilled();
 myCanvas.mousedown();
 myCanvas.mousemove();
 myCanvas.mouseup();
-// button.addEventListener("click", function(){
-//   context.clearRect(0, 0, canvas.width, canvas.height);
-// })
 
 
 
-
-// myCanvas.id.addEventListener("mousedown", myCanvas.engage);
-// myCanvas.id.addEventListener("mousemove", myCanvas.putPoint);
-// myCanvas.id.addEventListener("mouseup", myCanvas.disengage);
-// var putPoint = function (e) {
-//   if (this.dragging) {
-//     context.lineTo(e.clientX, e.clientY);
-//     context.stroke();
-//     context.beginPath();
-//     context.arc(e.clientX, e.clientY, myCanvas.radius, 0, Math.PI * 2);
-//     context.fill();
-//     context.beginPath();
-//     context.moveTo(e.clientX, e.clientY);
-
-//   }
-// }
-
-
-
-// var disengage = function() {
-//   this.dragging = false;
-//   context.beginPath();
-// }
