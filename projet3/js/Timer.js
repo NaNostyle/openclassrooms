@@ -53,7 +53,3 @@ var x = setInterval(function () {
         document.getElementById("timeout").innerHTML = "Le délais de réservation de votre vélo à expiré";
     }
 }, 1000);
-
-// Store
-
-// Retrieve
